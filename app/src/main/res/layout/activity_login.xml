@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.android.beertracker.LoginActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/default_margin_15_dp"
+        android:text="@string/app_name"
+        android:textSize="@dimen/default_size_24_sp" />
+
+    <EditText
+        android:id="@+id/login_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_size_50_dp"
+        android:layout_marginEnd="@dimen/default_margin_40_dp"
+        android:layout_marginStart="@dimen/default_margin_40_dp"
+        android:layout_marginTop="@dimen/default_margin_40_dp"
+        android:hint="@string/login" />
+
+    <EditText
+        android:id="@+id/password_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_size_50_dp"
+        android:layout_marginEnd="@dimen/default_margin_40_dp"
+        android:layout_marginStart="@dimen/default_margin_40_dp"
+        android:layout_marginTop="@dimen/default_margin_32_dp"
+        android:hint="@string/password"
+        android:inputType="textPassword" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/default_margin_40_dp"
+            android:layout_marginTop="@dimen/default_margin_50_dp"
+            android:text="@string/login" />
+
+        <Button
+            android:id="@+id/facebook_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin_40_dp"
+            android:layout_marginTop="@dimen/default_margin_50_dp"
+            android:layout_toEndOf="@+id/login"
+            android:text="@string/facebook_login" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/default_margin_80_dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signin_text"
+            android:textSize="@dimen/default_size_18_sp" />
+
+        <TextView
+            android:id="@+id/signin_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/default_margin_24_dp"
+            android:text="@string/signin"
+            android:textColor="@color/link"
+            android:textSize="@dimen/default_size_20_sp" />
+
+    </FrameLayout>
+
+</LinearLayout>
