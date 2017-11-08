@@ -1,4 +1,4 @@
-package com.android.beertracker;
+package com.android.beertracker.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.android.beertracker.R;
 
 public class LoginActivity extends AppCompatActivity {
 

@@ -12,6 +12,9 @@ public interface EstiloService {
     @GET("/estilo/")
     Call<Estilo> getEstilos(@Query("id") int id);
 
+    @GET("/estilo/")
+    Call<Estilo> getEstilos();
+
     @POST("/inserir-estilo/")
     void setEstilos(Estilo estilo);
 }
