@@ -9,10 +9,6 @@ import android.support.annotation.Nullable;
 import com.android.beertracker.infrastructure.Contants;
 import com.android.beertracker.infrastructure.NetworkUtil;
 
-/**
- * Created by stanislao on 13/11/17.
- */
-
 public class SyncService extends Service{
     @Nullable
     @Override
@@ -26,7 +22,8 @@ public class SyncService extends Service{
         int command = intent.getIntExtra(Contants.Services.Tag.COMMAND, 0);
 
         if(!NetworkUtil.isConnectionAvailable(this)) {
-            ResultReceiver receiver = intent.getParcelableExtra(Contants.Services.Tag.RESULT_RECIEVER)
+            ResultReceiver receiver = intent.getParcelableExtra(Contants.Services.Tag.RESULT_RECIEVER);
         }
+        return START_NOT_STICKY;
     }
 }
