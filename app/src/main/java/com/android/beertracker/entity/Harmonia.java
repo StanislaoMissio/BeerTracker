@@ -1,4 +1,4 @@
-package com.android.beertracker.model;
+package com.android.beertracker.entity;
 
 
 import com.google.gson.annotations.Expose;
