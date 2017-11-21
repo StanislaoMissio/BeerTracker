@@ -23,7 +23,6 @@ public class EstiloActivity extends Activity {
     private Context context;
     EstiloAdapter estiloAdapter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
