@@ -1,10 +1,12 @@
 package com.android.beertracker.integrator;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 
 import com.android.beertracker.activity.Response;
 import com.android.beertracker.entity.Estilo;
+import com.android.beertracker.infrastructure.Contants;
 import com.android.beertracker.table.EstiloContract;
 
 import java.io.IOException;
@@ -15,10 +17,15 @@ import retrofit2.Call;
 
 public class EstiloIntegrator extends BaseIntegrator{
 
-    private static final String BASE_URL = "localhost:5000/";
+    private NetworkIntegrator networkIntegrator;
+
+    public EstiloIntegrator(Context context){
+        super(context);
+        networkIntegrator = new NetworkIntegrator();
+    }
 
     public List<Estilo> loadAllEstilos(){
-        final EstiloAPI api = RetrofitClient.getClient(BASE_URL).create(EstiloAPI.class);
+        final EstiloAPI api = RetrofitClient.getClient(Contants.BeerTrackerAPI.HOST).create(EstiloAPI.class);
         final Call<Response> request = api.getAllEstilos();
         try {
             final retrofit2.Response<Response> response = request.execute();
