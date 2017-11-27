@@ -13,4 +13,13 @@
     <string name="start_drinking">Você ainda não bebeu o bastante</string>
     <string name="choose_style">Escolha o estilo</string>
     <string name="beauty_beer_image">Linda imagem de uma cerveja</string>
+    <string name="inicio">Inicio</string>
+    <string name="nav_motorista">Motorista da rodada</string>
+    <string name="nav_estilos">Estilos de cerveja</string>
+    <string name="nav_new_role">Criar Role</string>
+    <string name="nav_amigos">Amigos</string>
+    <string name="title_activity_motorista">Motorista</string>
+    <string name="title_activity_estilos">Estilos</string>
+    <string name="title_activity_new_role">New_role</string>
+    <string name="title_activity_amigos">Amigos</string>
 </resources>
