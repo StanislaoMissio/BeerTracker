@@ -31,7 +31,7 @@ public class EstiloIntegrator extends BaseIntegrator{
             final retrofit2.Response<Response> response = request.execute();
             return response.body().getData();
         } catch(IOException e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return null;
     }

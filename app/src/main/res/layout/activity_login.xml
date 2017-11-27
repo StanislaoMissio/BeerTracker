@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.android.beertracker.view.LoginActivity">
+    tools:context="com.android.beertracker.activity.LoginActivity">
 
     <TextView
         android:layout_width="wrap_content"

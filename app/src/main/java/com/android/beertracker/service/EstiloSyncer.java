@@ -3,7 +3,6 @@ package com.android.beertracker.service;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.os.ResultReceiver;
 
 import com.android.beertracker.entity.Estilo;
@@ -31,7 +30,7 @@ public class EstiloSyncer extends Syncer{
         EstiloManager estiloManager = new EstiloManager(this.service);
 
         switch (command) {
-            case Contants.Services.SyncCommand.PLACE_ALL:
+            case Contants.Services.SyncCommand.ESTILO_ALL:
                 estiloManager.loadAllEstilos(false, new OperationListener<List<Estilo>>() {
                     @Override
                     public void onOperationSuccess(List<Estilo> estilos) {

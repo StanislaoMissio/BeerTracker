@@ -13,4 +13,7 @@
     <string name="start_drinking">Você ainda não bebeu o bastante</string>
     <string name="choose_style">Escolha o estilo</string>
     <string name="beauty_beer_image">Linda imagem de uma cerveja</string>
+    <string name="harmonia">harmonia</string>
+    <string name="preco">preco</string>
+    <string name="detalhes">detalhes</string>
 </resources>

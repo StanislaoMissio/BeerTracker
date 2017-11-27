@@ -5,7 +5,7 @@ public class Contants {
     private Contants(){}
 
     public interface BeerTrackerAPI {
-        String HOST = "localhost:5000/";
+        String HOST = "http://172.16.4.52:5000/";
     }
 
     public static final class ErrorCodes {
@@ -33,7 +33,7 @@ public class Contants {
         }
 
         interface SyncCommand {
-            int PLACE_ALL = 0;
+            int ESTILO_ALL = 0;
         }
     }
 

@@ -24,7 +24,8 @@ public class EstiloManager extends BaseManager{
     }
 
     public void loadAllEstilos(final boolean local, final OperationListener operationListener) {
-        final AsyncTask<Void, Void, OperationResult<List<Estilo>>> task = new AsyncTask<Void, Void, OperationResult<List<Estilo>>>() {
+        final AsyncTask<Void, Void, OperationResult<List<Estilo>>> task =
+                new AsyncTask<Void, Void, OperationResult<List<Estilo>>>() {
             @Override
             protected OperationResult<List<Estilo>> doInBackground(Void... params) {
                 return estiloBusiness.loadAllEstilos(local);

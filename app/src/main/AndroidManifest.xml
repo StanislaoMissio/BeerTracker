@@ -28,6 +28,8 @@
         </activity>
         <activity android:name=".activity.EstiloActivity">
         </activity>
+        <activity android:name=".activity.EstiloDetailPageActivity">
+        </activity>
     </application>
 
 </manifest>

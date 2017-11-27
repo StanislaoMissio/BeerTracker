@@ -16,9 +16,11 @@ import java.util.List;
 public class EstiloAdapter extends RecyclerView.Adapter<EstiloAdapter.EstiloViewHolder> {
 
     private List<Estilo> itemsList;
+    private onEstiloClickListener onEstiloClickListener;
 
-    public EstiloAdapter(List<Estilo> itemsList) {
+    public EstiloAdapter(List<Estilo> itemsList, onEstiloClickListener onEstiloClickListener) {
         this.itemsList = itemsList;
+        this.onEstiloClickListener = onEstiloClickListener;
     }
 
     @Override
@@ -35,7 +37,6 @@ public class EstiloAdapter extends RecyclerView.Adapter<EstiloAdapter.EstiloView
 
     @Override
     public int getItemCount() {
-
         return this.itemsList.size();
     }
 
@@ -56,6 +57,10 @@ public class EstiloAdapter extends RecyclerView.Adapter<EstiloAdapter.EstiloView
         public void onClick(View view) {
             Toast.makeText(view.getContext(), getLayoutPosition(),Toast.LENGTH_LONG).show();
         }
+    }
+
+    public interface onEstiloClickListener{
+        void onEstiloSelected(Estilo estilo);
     }
 
 }
