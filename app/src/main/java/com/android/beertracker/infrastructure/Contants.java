@@ -13,7 +13,6 @@ public class Contants {
     }
 
     public static final class NetworkIntegrator {
-        public static final String CONTENT_TYPE_JSON = "aplication/json";
         public static final int READ_TIMEOUT = 20000;
         public static final int CONNECT_TIMEOUT = 20000;
         public static final String METHOD_GET = "GET";
@@ -25,6 +24,7 @@ public class Contants {
             String RESULT_RECIEVER = "reciever";
             String ERROR_MESSAGE = "error message";
             String BULK_LIST_ESTILO = "bulkInsertCount";
+            int COLUMN_STAGGED_LAYOUT = 2;
         }
 
         interface Status {

@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                xmlns:app="http://schemas.android.com/apk/res-auto">
+                android:layout_height="match_parent">
 
-    <android.support.design.widget.TabLayout
-            android:id="@+id/tab_menu_details_estilo"
+    <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/orange_F5A44D"
-            app:tabIndicatorColor="@color/blue_1B9AF7">
+            app:elevation="0dp">
 
-            <android.support.design.widget.TabItem
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:icon="@drawable/ic_description_white_36dp"/>
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_detail_style"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/orange_F5A44D"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
-        <android.support.design.widget.TabItem
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:icon="@drawable/ic_attach_money_white_36dp"/>
+        <android.support.design.widget.TabLayout
+                android:id="@+id/tab_menu_details_estilo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/orange_F5A44D"
+                app:tabIndicatorColor="@color/blue_1B9AF7"
+                app:tabMode="fixed"
+                app:tabGravity="fill"/>
 
-        <android.support.design.widget.TabItem
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:icon="@drawable/ic_restaurant_white_36dp"/>
-    </android.support.design.widget.TabLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/pager_selected_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
 </RelativeLayout>
