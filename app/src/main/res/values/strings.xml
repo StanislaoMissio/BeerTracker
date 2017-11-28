@@ -16,4 +16,13 @@
     <string name="harmonia">harmonia</string>
     <string name="preco">preco</string>
     <string name="detalhes">detalhes</string>
+    <string name="inicio">Inicio</string>
+    <string name="nav_motorista">Motorista da rodada</string>
+    <string name="nav_estilos">Estilos de cerveja</string>
+    <string name="nav_new_role">Criar Role</string>
+    <string name="nav_amigos">Amigos</string>
+    <string name="title_activity_motorista">Motorista</string>
+    <string name="title_activity_estilos">Estilos</string>
+    <string name="title_activity_new_role">New_role</string>
+    <string name="title_activity_amigos">Amigos</string>
 </resources>
