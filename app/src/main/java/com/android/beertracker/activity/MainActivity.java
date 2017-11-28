@@ -59,17 +59,19 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_inicio) {
+        } else if (id == R.id.nav_motorista) {
+            Intent motorista = new Intent(getApplicationContext(), Motorista.class);
+            startActivity(motorista);
+        } else if (id == R.id.nav_estilos) {
+            Intent estilos = new Intent(getApplicationContext(), Estilos.class);
+            startActivity(estilos);
+        } else if (id == R.id.nav_new_role) {
+            Intent role = new Intent(getApplicationContext(), New_role.class);
+            startActivity(role);
+        } else if (id == R.id.nav_amigos) {
+            Intent amigos = new Intent(getApplicationContext(), Amigos.class);
+            startActivity(amigos);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
