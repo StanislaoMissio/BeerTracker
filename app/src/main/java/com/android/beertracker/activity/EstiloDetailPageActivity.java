@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import com.android.beertracker.R;
 import com.android.beertracker.entity.Estilo;
@@ -25,7 +26,11 @@ public class EstiloDetailPageActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_estilo_detail_page);
+        setContentView(R.layout.activity_estilo_detail_page);
+        Toolbar toolbar = findViewById(R.id.toolbar_detail_style);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Estilo estilo = loadEstilo();
         if(estilo != null){
             final ViewPager viewPager = findViewById(R.id.pager_selected_style);
@@ -44,6 +49,12 @@ public class EstiloDetailPageActivity extends AppCompatActivity {
         adapter.addFragment(new EstiloPriceFragment());
         adapter.addFragment(new EstiloHarmonyFragment());
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     @Nullable

@@ -65,6 +65,12 @@ public class EstiloActivity extends AppCompatActivity implements EstiloAdapter.o
         startActivity(intent);
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
     class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
 
         private int spanCount;

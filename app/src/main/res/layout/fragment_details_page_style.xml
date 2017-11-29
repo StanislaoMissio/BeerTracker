@@ -5,9 +5,19 @@
         android:layout_height="match_parent">
 
     <ImageView
+            android:id="@+id/image_style_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_beer"
-            android:layout_alignParentBottom="true"/>
+            android:contentDescription="@string/app_name"/>
+
+    <TextView
+            android:id="@+id/title_style_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/description_style_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
 </RelativeLayout>

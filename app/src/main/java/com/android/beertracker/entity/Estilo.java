@@ -1,7 +1,6 @@
 package com.android.beertracker.entity;
 
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import android.database.Cursor;
