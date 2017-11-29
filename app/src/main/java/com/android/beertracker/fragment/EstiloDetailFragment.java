@@ -53,10 +53,7 @@ public class EstiloDetailFragment extends Fragment {
     }
 
     private Estilo loadEstilo(){
-        if(getArguments() != null && getArguments().containsKey(SELECTED_ESTILO)){
-            return getArguments().getParcelable(SELECTED_ESTILO);
-        }
-        else if(getActivity().getIntent().getExtras()
+        if(getActivity().getIntent().getExtras()
                 != null && getActivity().getIntent().getExtras().containsKey(SELECTED_ESTILO)){
             return getActivity().getIntent().getExtras().getParcelable(SELECTED_ESTILO);
         }
