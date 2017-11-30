@@ -31,7 +31,7 @@ public class SyncService extends Service{
         }
 
         switch(command){
-            case Contants.Services.SyncCommand.ESTILO_ALL: {
+            case Contants.Services.SyncCommand.RESULT_OK: {
                 syncer = new EstiloSyncer(this);
                 syncer.sync(intent);
                 break;

@@ -1,18 +1,30 @@
 package com.android.beertracker.activity;
 
 import com.android.beertracker.entity.Estilo;
+import com.android.beertracker.entity.Harmonia;
 
 import java.util.List;
 
 public class Response {
 
-    private List<Estilo> data;
+    private List<Harmonia> dataHarmonia;
+    private List<Estilo> dataEstilos;
 
-    public List<Estilo> getData() {
-        return data;
+    public List<Harmonia> getDataHarmonia() {
+        return dataHarmonia;
     }
 
-    public void setData(List<Estilo> data) {
-        this.data = data;
+    public void setDataHarmonia(List<Harmonia> dataHarmonia) {
+        this.dataHarmonia = dataHarmonia;
     }
+
+    public List<Estilo> getDataEstilos() {
+        return dataEstilos;
+    }
+
+    public void setDataEstilos(List<Estilo> dataEstilos) {
+        this.dataEstilos = dataEstilos;
+    }
+
+
 }

@@ -23,7 +23,7 @@ public class Contants {
             String COMMAND = "command";
             String RESULT_RECIEVER = "reciever";
             String ERROR_MESSAGE = "error message";
-            String BULK_LIST_ESTILO = "bulkInsertCount";
+            String BULK_LIST = "bulkInsertCount";
             int COLUMN_STAGGED_LAYOUT = 2;
         }
 
@@ -33,7 +33,7 @@ public class Contants {
         }
 
         interface SyncCommand {
-            int ESTILO_ALL = 0;
+            int RESULT_OK = 0;
         }
     }
 

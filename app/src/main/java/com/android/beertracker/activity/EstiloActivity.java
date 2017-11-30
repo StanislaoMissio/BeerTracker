@@ -46,7 +46,7 @@ public class EstiloActivity extends AppCompatActivity implements EstiloAdapter.o
     }
 
     private void loadAllEstilos(){
-        estiloManager.loadAllEstilos(false, new OperationListener<List<Estilo>>() {
+        estiloManager.loadAllEstilos(new OperationListener<List<Estilo>>() {
             @Override
             public void onOperationSuccess(List<Estilo> estilos) {
                 estiloAdapter = new EstiloAdapter(estilos, EstiloActivity.this);

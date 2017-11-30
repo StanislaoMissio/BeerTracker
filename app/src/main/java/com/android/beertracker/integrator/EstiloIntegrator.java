@@ -17,11 +17,8 @@ import retrofit2.Call;
 
 public class EstiloIntegrator extends BaseIntegrator{
 
-    private NetworkIntegrator networkIntegrator;
-
     public EstiloIntegrator(Context context){
         super(context);
-        networkIntegrator = new NetworkIntegrator();
     }
 
     public List<Estilo> loadAllEstilos(){
@@ -29,7 +26,7 @@ public class EstiloIntegrator extends BaseIntegrator{
         final Call<Response> request = api.getAllEstilos();
         try {
             final retrofit2.Response<Response> response = request.execute();
-            return response.body().getData();
+            return response.body().getDataEstilos();
         } catch(IOException e){
             System.out.println(e.getMessage());
         }
@@ -58,23 +55,23 @@ public class EstiloIntegrator extends BaseIntegrator{
         return estilos;
     }
 
-    public List<Estilo> loadEstilosFromDatabase() {
-        openDatabase();
-        Cursor cursor = database.query(EstiloContract.EstiloEntry.TABLE_NAME, null, null, null, null, null, null);
-        cursor.moveToFirst();
-        final List<Estilo> places = new ArrayList<>();
-        while (!cursor.isAfterLast()) {
-            places.add(new Estilo(cursor));
-            cursor.moveToNext();
-        }
-        cursor.close();
-        releaseDatabase();
-        return places;
-    }
-
-    public void cleanTable(){
-        openDatabase();
-        this.database.delete(EstiloContract.EstiloEntry.TABLE_NAME, null, null);
-        releaseDatabase();
-    }
+//    public List<Estilo> loadEstilosFromDatabase() {
+//        openDatabase();
+//        Cursor cursor = database.query(EstiloContract.EstiloEntry.TABLE_NAME, null, null, null, null, null, null);
+//        cursor.moveToFirst();
+//        final List<Estilo> places = new ArrayList<>();
+//        while (!cursor.isAfterLast()) {
+//            places.add(new Estilo(cursor));
+//            cursor.moveToNext();
+//        }
+//        cursor.close();
+//        releaseDatabase();
+//        return places;
+//    }
+//
+//    public void cleanTable(){
+//        openDatabase();
+//        this.database.delete(EstiloContract.EstiloEntry.TABLE_NAME, null, null);
+//        releaseDatabase();
+//    }
 }

@@ -18,7 +18,7 @@ public class EstiloAdapter extends RecyclerView.Adapter<EstiloAdapter.EstiloView
 
     private List<Estilo> itemsList;
     private onEstiloClickListener onEstiloClickListener;
-    Context context;
+    private Context context;
 
     public EstiloAdapter(List<Estilo> itemsList, onEstiloClickListener onEstiloClickListener) {
         this.itemsList = itemsList;
@@ -40,6 +40,8 @@ public class EstiloAdapter extends RecyclerView.Adapter<EstiloAdapter.EstiloView
             .with(context)
             .load(estilo.getImagem())
             .resize(250, 250)
+            .error(R.drawable.ic_error_outline_black_36dp)
+            .placeholder(R.drawable.progress_animation)
             .into(holder.styleImage);
     }
 
