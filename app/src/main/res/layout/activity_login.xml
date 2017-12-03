@@ -41,20 +41,14 @@
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="start"
             android:layout_marginStart="@dimen/default_margin_40_dp"
             android:layout_marginTop="@dimen/default_margin_50_dp"
-            android:text="@string/login" />
-
-        <Button
-            android:id="@+id/facebook_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/default_margin_40_dp"
-            android:layout_marginTop="@dimen/default_margin_50_dp"
-            android:layout_toEndOf="@+id/login"
-            android:text="@string/facebook_login" />
-
+            android:text="@string/login"
+            android:background="@drawable/theme_button_pattern"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <FrameLayout

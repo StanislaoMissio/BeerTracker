@@ -15,7 +15,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText loginText;
     private EditText passwordText;
     private Button buttonLogin;
-    private Button buttonLoginFacebook;
     private TextView signInText;
 
     @Override
@@ -26,15 +25,20 @@ public class LoginActivity extends AppCompatActivity {
         loginText = (EditText) findViewById(R.id.login_text);
         passwordText = (EditText) findViewById(R.id.password_text);
         buttonLogin = (Button) findViewById(R.id.login);
-        buttonLoginFacebook = (Button) findViewById(R.id.facebook_login);
         signInText = (TextView) findViewById(R.id.signin_text);
 
+        signInText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
+                startActivity(intent);
+            }
+        });
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                intent.putExtra("login", loginText.getText());
                 startActivity(intent);
             }
         });
