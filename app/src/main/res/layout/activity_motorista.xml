@@ -25,13 +25,11 @@
         android:id="@+id/txtSorteioRole"
         android:layout_width="match_parent"
         android:layout_height="@dimen/default_size_50_dp"
-        android:gravity="center"
         android:textSize="20dp"
-        android:textStyle="bold"
         android:layout_below="@+id/AppBar"
         android:layout_marginEnd="@dimen/default_margin_40_dp"
         android:layout_marginStart="@dimen/default_margin_40_dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:hint="@string/nomeRole" />
 
     <EditText
@@ -52,12 +50,22 @@
         android:text="Add"
         style="@style/BotaoPadrao"/>
 
-    <ListView
-        android:id="@+id/list"
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@id/list"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@+id/txtInput"
-        android:layout_marginTop="40dp"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="@dimen/default_margin_40_dp"
+        android:layout_below="@+id/txtInput">
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+    </android.support.design.widget.CoordinatorLayout>
 
     <Button
         android:id="@+id/btnSortear"
@@ -67,8 +75,7 @@
         android:layout_marginTop="@dimen/default_margin_40_dp"
         android:layout_centerHorizontal="true"
         android:text="Sortear"
-        style="@style/BotaoPadrao"
-        />
+        style="@style/BotaoPadrao"/>
 
 </RelativeLayout>
 
