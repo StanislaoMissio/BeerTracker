@@ -7,7 +7,7 @@ import android.os.IBinder;
 import android.os.ResultReceiver;
 import android.support.annotation.Nullable;
 
-import com.android.beertracker.infrastructure.Contants;
+import com.android.beertracker.infrastructure.Constants;
 import com.android.beertracker.infrastructure.NetworkUtil;
 
 public class SyncService extends Service{
@@ -20,18 +20,18 @@ public class SyncService extends Service{
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Syncer syncer;
-        int command = intent.getIntExtra(Contants.Services.Tag.COMMAND, 0);
+        int command = intent.getIntExtra(Constants.Services.Tag.COMMAND, 0);
 
         if(!NetworkUtil.isConnectionAvailable(this)) {
-            ResultReceiver receiver = intent.getParcelableExtra(Contants.Services.Tag.RESULT_RECIEVER);
+            ResultReceiver receiver = intent.getParcelableExtra(Constants.Services.Tag.RESULT_RECIEVER);
             Bundle bundle = new Bundle();
-            bundle.putString(Contants.Services.Tag.ERROR_MESSAGE, "Sem conexão com a internet");
-            receiver.send(Contants.Services.Status.ERROR, bundle);
+            bundle.putString(Constants.Services.Tag.ERROR_MESSAGE, "Sem conexão com a internet");
+            receiver.send(Constants.Services.Status.ERROR, bundle);
             return START_NOT_STICKY;
         }
 
         switch(command){
-            case Contants.Services.SyncCommand.RESULT_OK: {
+            case Constants.Services.SyncCommand.RESULT_OK: {
                 syncer = new EstiloSyncer(this);
                 syncer.sync(intent);
                 break;

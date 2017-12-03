@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.android.beertracker.R;
 
-public class Estilos extends AppCompatActivity {
+public class Styles extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

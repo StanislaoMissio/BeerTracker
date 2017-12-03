@@ -1,11 +1,13 @@
 package com.android.beertracker.infrastructure;
 
-public class Contants {
+public class Constants {
 
-    private Contants(){}
+    private Constants(){}
 
     public interface BeerTrackerAPI {
-        String HOST = "http://172.16.4.52:5000/";
+//        String HOST = "http://192.168.0.10:5000/";
+        String HOST = "http://10.0.2.2:5000/";
+//        String HOST = "http://192.168.0.26:5000/";
     }
 
     public static final class ErrorCodes {

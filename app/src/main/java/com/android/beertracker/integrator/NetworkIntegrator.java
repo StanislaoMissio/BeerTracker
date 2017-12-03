@@ -1,9 +1,8 @@
 package com.android.beertracker.integrator;
 
-import com.android.beertracker.infrastructure.Contants;
+import com.android.beertracker.infrastructure.Constants;
 import com.android.beertracker.infrastructure.NetworkOperationResult;
 
-import java.io.Console;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -28,9 +27,9 @@ public class NetworkIntegrator {
             } else {
                 connection = (HttpURLConnection) endPoint.openConnection();
             }
-            connection.setReadTimeout(Contants.NetworkIntegrator.READ_TIMEOUT);
-            connection.setConnectTimeout(Contants.NetworkIntegrator.CONNECT_TIMEOUT);
-            connection.setRequestMethod(Contants.NetworkIntegrator.METHOD_GET);
+            connection.setReadTimeout(Constants.NetworkIntegrator.READ_TIMEOUT);
+            connection.setConnectTimeout(Constants.NetworkIntegrator.CONNECT_TIMEOUT);
+            connection.setRequestMethod(Constants.NetworkIntegrator.METHOD_GET);
             connection.setDoInput(true);
             connection.setRequestProperty("Content-Type", contentType);
             connection.connect();

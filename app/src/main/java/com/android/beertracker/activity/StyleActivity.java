@@ -10,19 +10,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.android.beertracker.R;
-import com.android.beertracker.adapter.EstiloAdapter;
-import com.android.beertracker.entity.Estilo;
-import com.android.beertracker.infrastructure.Contants;
+import com.android.beertracker.adapter.StyleAdapter;
+import com.android.beertracker.entity.Style;
+import com.android.beertracker.infrastructure.Constants;
 import com.android.beertracker.infrastructure.OperationListener;
-import com.android.beertracker.manager.EstiloManager;
+import com.android.beertracker.manager.StyleManager;
 
 import java.util.List;
 
-public class EstiloActivity extends AppCompatActivity implements EstiloAdapter.onEstiloClickListener{
+public class StyleActivity extends AppCompatActivity implements StyleAdapter.onStyleClickListener {
 
-    private EstiloManager estiloManager;
+    private StyleManager styleManager;
     private RecyclerView recyclerView;
-    EstiloAdapter estiloAdapter;
+    StyleAdapter styleAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,34 +33,34 @@ public class EstiloActivity extends AppCompatActivity implements EstiloAdapter.o
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        estiloManager = new EstiloManager(this);
+        styleManager = new StyleManager(this);
 
         recyclerView = findViewById(R.id.recycler_styles);
         recyclerView.setHasFixedSize(true);
 
         RecyclerView.LayoutManager recyclerLayoutManager =
-                new StaggeredGridLayoutManager(Contants.Services.Tag.COLUMN_STAGGED_LAYOUT,StaggeredGridLayoutManager.VERTICAL);
+                new StaggeredGridLayoutManager(Constants.Services.Tag.COLUMN_STAGGED_LAYOUT,StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(recyclerLayoutManager);
-        recyclerView.addItemDecoration(new EstiloActivity.GridSpacingItemDecoration(2, 50, true));
-        loadAllEstilos();
+        recyclerView.addItemDecoration(new StyleActivity.GridSpacingItemDecoration(2, 50, true));
+        loadAllStyles();
     }
 
-    private void loadAllEstilos(){
-        estiloManager.loadAllEstilos(new OperationListener<List<Estilo>>() {
+    private void loadAllStyles(){
+        styleManager.loadAllEstilos(new OperationListener<List<Style>>() {
             @Override
-            public void onOperationSuccess(List<Estilo> estilos) {
-                estiloAdapter = new EstiloAdapter(estilos, EstiloActivity.this);
-                recyclerView.setAdapter(estiloAdapter);
+            public void onOperationSuccess(List<Style> styles) {
+                styleAdapter = new StyleAdapter(styles, StyleActivity.this);
+                recyclerView.setAdapter(styleAdapter);
             }
         });
     }
 
 
     @Override
-    public void onEstiloSelected(Estilo estilo) {
-        Intent intent = new Intent(this, EstiloDetailPageActivity.class);
+    public void onStyleSelected(Style style) {
+        Intent intent = new Intent(this, StyleDetailPageActivity.class);
         final Bundle bundle = new Bundle();
-        bundle.putParcelable(EstiloDetailPageActivity.SELECTED_ESTILO, estilo);
+        bundle.putParcelable(StyleDetailPageActivity.SELECTED_STYLE, style);
         intent.putExtras(bundle);
         startActivity(intent);
     }

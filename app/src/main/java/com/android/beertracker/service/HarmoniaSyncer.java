@@ -5,11 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 
-import com.android.beertracker.entity.Harmonia;
-import com.android.beertracker.infrastructure.Contants;
+import com.android.beertracker.entity.Harmony;
+import com.android.beertracker.infrastructure.Constants;
 import com.android.beertracker.infrastructure.OperationError;
 import com.android.beertracker.infrastructure.OperationListener;
-import com.android.beertracker.manager.HarmoniaManager;
+import com.android.beertracker.manager.HarmonyManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,28 +26,28 @@ public class HarmoniaSyncer extends Syncer{
 
     @Override
     public void sync(Intent intent) {
-        final ResultReceiver receiver = intent.getParcelableExtra(Contants.Services.Tag.RESULT_RECIEVER);
-        int command = intent.getIntExtra(Contants.Services.Tag.COMMAND, 0);
+        final ResultReceiver receiver = intent.getParcelableExtra(Constants.Services.Tag.RESULT_RECIEVER);
+        int command = intent.getIntExtra(Constants.Services.Tag.COMMAND, 0);
 
-        HarmoniaManager harmoniaManager = new HarmoniaManager(this.service);
+        HarmonyManager harmonyManager = new HarmonyManager(this.service);
 
         switch(command){
-            case Contants.Services.SyncCommand.RESULT_OK:
-                harmoniaManager.loadAllHarmoniaForAnStyle(new OperationListener<List<Harmonia>>() {
+            case Constants.Services.SyncCommand.RESULT_OK:
+                harmonyManager.loadAllHarmoniaForAnStyle(new OperationListener<List<Harmony>>() {
                     @Override
-                    public void onOperationSuccess(List<Harmonia> harmonias) {
+                    public void onOperationSuccess(List<Harmony> harmonies) {
                         final Bundle bundleExtras = new Bundle();
-                        bundleExtras.putParcelableArrayList(Contants.Services.Tag.BULK_LIST,
-                                new ArrayList<>(harmonias));
-                        receiver.send(Contants.Services.Status.FINISH, bundleExtras);
+                        bundleExtras.putParcelableArrayList(Constants.Services.Tag.BULK_LIST,
+                                new ArrayList<>(harmonies));
+                        receiver.send(Constants.Services.Status.FINISH, bundleExtras);
                     }
 
                     @Override
-                    public void onOperationError(List<Harmonia> harmonias, List<OperationError> errors) {
+                    public void onOperationError(List<Harmony> harmonies, List<OperationError> errors) {
                         final Bundle bundleExtras = new Bundle();
-                        bundleExtras.putString(Contants.Services.Tag.ERROR_MESSAGE,
+                        bundleExtras.putString(Constants.Services.Tag.ERROR_MESSAGE,
                                 "Serviço não disponivel. Tente mais tarde");
-                        receiver.send(Contants.Services.Status.ERROR, bundleExtras);
+                        receiver.send(Constants.Services.Status.ERROR, bundleExtras);
                     }
                 }, codEstilo);
                 break;
