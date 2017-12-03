@@ -1,7 +1,6 @@
 package com.android.beertracker.entity;
 
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import android.database.Cursor;
@@ -18,14 +17,14 @@ public class Estilo implements Parcelable{
     private String nomeEstilo;
     private String descricao;
     private double preco;
-    private String imagem;
+    private String image;
 
     public String getImagem() {
-        return imagem;
+        return image;
     }
 
-    public void setImagem(String imagem) {
-        this.imagem = imagem;
+    public void setImagem(String image) {
+        this.image = image;
     }
 
     public long getCodEstilo() {
@@ -70,7 +69,7 @@ public class Estilo implements Parcelable{
         out.writeLong(codEstilo);
         out.writeString(nomeEstilo);
         out.writeString(descricao);
-        out.writeString(imagem);
+        out.writeString(image);
         out.writeDouble(preco);
     }
 
@@ -81,14 +80,14 @@ public class Estilo implements Parcelable{
         this.nomeEstilo = cursor.getString(cursor.getColumnIndex(EstiloContract.EstiloEntry.COLUMN_NAME));
         this.descricao = cursor.getString(cursor.getColumnIndex(EstiloContract.EstiloEntry.COLUMN_DESCRICAO));
         this.preco = cursor.getDouble(cursor.getColumnIndex(EstiloContract.EstiloEntry.COLUMN_PRECO));
-        this.imagem = cursor.getString(cursor.getColumnIndex(EstiloContract.EstiloEntry.COLUMN_IMAGE));
+        this.image = cursor.getString(cursor.getColumnIndex(EstiloContract.EstiloEntry.COLUMN_IMAGE));
     }
 
     public Estilo(Parcel in){
         codEstilo = in.readLong();
         nomeEstilo = in.readString();
         descricao = in.readString();
-        imagem = in.readString();
+        image = in.readString();
         preco = in.readDouble();
     }
 

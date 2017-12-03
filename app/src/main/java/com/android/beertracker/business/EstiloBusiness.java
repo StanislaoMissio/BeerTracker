@@ -8,22 +8,15 @@ import java.util.List;
 
 public class EstiloBusiness {
 
-    EstiloIntegrator estiloIntegrator;
+    private EstiloIntegrator estiloIntegrator;
 
     public EstiloBusiness(EstiloIntegrator integrator) {
         this.estiloIntegrator = integrator;
     }
 
-    public OperationResult<List<Estilo>> loadAllEstilos(boolean local) {
+    public OperationResult<List<Estilo>> loadAllEstilos() {
         OperationResult<List<Estilo>> result = new OperationResult<>();
-        if(local) {
-            result.setResult(this.estiloIntegrator.loadEstilosFromDatabase());
-        } else {
-            List<Estilo> dataFromServer = estiloIntegrator.loadAllEstilos();
-            dataFromServer = this.estiloIntegrator.saveAllEstilos(dataFromServer);
-            result.setResult(dataFromServer);
-        }
-
+        result.setResult(estiloIntegrator.loadAllEstilos());
         result.setOperationCompletedSuccessfully(true);
         return result;
     }

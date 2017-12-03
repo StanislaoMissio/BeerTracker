@@ -8,11 +8,13 @@ public class Response {
 
     private List<Estilo> data;
 
-    public List<Estilo> getData() {
+    public List<Estilo> getDataEstilos() {
         return data;
     }
 
-    public void setData(List<Estilo> data) {
-        this.data = data;
+    public void setDataEstilos(List<Estilo> dataEstilos) {
+        this.data = dataEstilos;
     }
+
+
 }

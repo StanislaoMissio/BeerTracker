@@ -5,7 +5,7 @@ public class Contants {
     private Contants(){}
 
     public interface BeerTrackerAPI {
-        String HOST = "localhost:5000/";
+        String HOST = "http://172.16.4.52:5000/";
     }
 
     public static final class ErrorCodes {
@@ -13,7 +13,6 @@ public class Contants {
     }
 
     public static final class NetworkIntegrator {
-        public static final String CONTENT_TYPE_JSON = "aplication/json";
         public static final int READ_TIMEOUT = 20000;
         public static final int CONNECT_TIMEOUT = 20000;
         public static final String METHOD_GET = "GET";
@@ -24,7 +23,8 @@ public class Contants {
             String COMMAND = "command";
             String RESULT_RECIEVER = "reciever";
             String ERROR_MESSAGE = "error message";
-            String BULK_LIST_ESTILO = "bulkInsertCount";
+            String BULK_LIST = "bulkInsertCount";
+            int COLUMN_STAGGED_LAYOUT = 2;
         }
 
         interface Status {
@@ -33,7 +33,7 @@ public class Contants {
         }
 
         interface SyncCommand {
-            int PLACE_ALL = 0;
+            int RESULT_OK = 0;
         }
     }
 
