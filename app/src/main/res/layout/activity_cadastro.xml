@@ -44,6 +44,7 @@
         android:layout_marginEnd="@dimen/default_margin_40_dp"
         android:layout_marginStart="@dimen/default_margin_40_dp"
         android:layout_marginTop="@dimen/default_margin_40_dp"
+        android:inputType="textEmailAddress"
         android:layout_below="@+id/dataNasc_cadastro"
         android:hint="@string/email" />
 
