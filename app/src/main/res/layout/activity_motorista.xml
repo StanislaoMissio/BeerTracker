@@ -4,12 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.beertracker.MotoristaActivity">
+    tools:context="com.android.beertracker.activity.MotoristaActivity">
 
-    <EditText
-        android:id="@+id/edtNomeRole"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/AppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarDriver"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/orange_F5A44D"
+            app:titleTextColor="@color/white">
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:id="@+id/txtSorteioRole"
         android:layout_width="match_parent"
         android:layout_height="@dimen/default_size_50_dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/AppBar"
         android:layout_marginEnd="@dimen/default_margin_40_dp"
         android:layout_marginStart="@dimen/default_margin_40_dp"
         android:layout_marginTop="20dp"
@@ -19,30 +38,26 @@
         android:id="@+id/txtInput"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtNomeRole"
+        android:layout_below="@+id/txtSorteioRole"
         android:hint="Novo Nome"
         android:layout_marginTop="40dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="40dp"/>
 
-        />
     <Button
         android:id="@+id/btAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtSorteioRole"
+        android:layout_alignTop="@+id/txtInput"
         android:text="Add"
-        android:layout_below="@+id/edtNomeRole"
-        android:layout_marginTop="40dp"
-        android:layout_toRightOf="@+id/txtInput"
-        />
+        style="@style/BotaoPadrao"/>
 
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_below="@+id/txtInput"
-        android:layout_marginTop="40dp"
-        >
-    </ListView>
+        android:layout_marginTop="40dp"/>
 
     <Button
         android:id="@+id/btnSortear"
@@ -52,6 +67,7 @@
         android:layout_marginTop="@dimen/default_margin_40_dp"
         android:layout_centerHorizontal="true"
         android:text="Sortear"
+        style="@style/BotaoPadrao"
         />
 
 </RelativeLayout>

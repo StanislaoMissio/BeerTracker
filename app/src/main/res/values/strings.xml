@@ -13,7 +13,7 @@
     <string name="cadastro">Cadastro</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="sair">Sair</string>
-    <string name="nomeRole">Nome do Rolê</string>
+    <string name="nomeRole">Sorteio do Motorista da Rodada</string>
     <string name="facebook_login">Login com Facebook</string>
     <string name="password">Senha</string>
     <string name="signin_text">Ainda não possui uma conta?</string>

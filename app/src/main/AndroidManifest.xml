@@ -23,10 +23,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.EstiloActivity" />
         <activity
-            android:name=".activity.Motorista"
-            android:label="@string/title_activity_motorista"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".activity.Estilos"
             android:label="@string/title_activity_estilos"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -35,9 +31,23 @@
             android:label="@string/title_activity_new_role"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".activity.MotoristaActivity"
+            android:label="@string/title_activity_motorista"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
             android:name=".activity.Amigos"
             android:label="@string/title_activity_amigos"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
