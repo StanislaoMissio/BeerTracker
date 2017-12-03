@@ -32,7 +32,7 @@
             android:label="@string/title_activity_new_role"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.MotoristaActivity"
+            android:name=".activity.Motorista"
             android:label="@string/title_activity_motorista"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
