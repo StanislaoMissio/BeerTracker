@@ -17,6 +17,9 @@ import com.android.beertracker.R;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    private Button btnCadastrar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_inicio) {
         } else if (id == R.id.nav_motorista) {
-            Intent motorista = new Intent(getApplicationContext(), Motorista.class);
+            Intent motorista = new Intent(getApplicationContext(), MotoristaActivity.class);
             startActivity(motorista);
         } else if (id == R.id.nav_estilos) {
             Intent estilos = new Intent(getApplicationContext(), Styles.class);

@@ -10,6 +10,11 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="BotaoPadrao">
+        <item name="android:background">@color/blue_1B9AF7</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <style name="ButtonExpandStyle">
         <item name="android:colorBackground">@android:color/transparent</item>
         <item name="android:background">@drawable/ic_keyboard_arrow_down_black_36dp</item>

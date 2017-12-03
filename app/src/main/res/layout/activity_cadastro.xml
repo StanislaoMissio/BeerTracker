@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android.beertracker.activity.CadastroActivity">
+    android:layout_marginTop="?attr/actionBarSize"
+    tools:context="com.android.beertracker.activity.CadastroActivity"
+    >
 
     <TextView
         android:id="@+id/txtCadastro"

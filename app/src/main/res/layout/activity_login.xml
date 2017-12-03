@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.android.beertracker.activity.LoginActivity">
+    tools:context="com.android.beertracker.activity.LoginActivity"
+    android:layout_marginTop="?attr/actionBarSize">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/default_margin_15_dp"
+        android:layout_marginTop="@dimen/default_margin_40_dp"
         android:text="@string/app_name"
         android:textSize="@dimen/default_size_24_sp" />
 
@@ -20,7 +21,7 @@
         android:layout_height="@dimen/default_size_50_dp"
         android:layout_marginEnd="@dimen/default_margin_40_dp"
         android:layout_marginStart="@dimen/default_margin_40_dp"
-        android:layout_marginTop="@dimen/default_margin_40_dp"
+        android:layout_marginTop="60dp"
         android:inputType="textEmailAddress"
         android:hint="@string/login" />
 
