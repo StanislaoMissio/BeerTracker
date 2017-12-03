@@ -5,7 +5,7 @@ import android.provider.BaseColumns;
 public class EstiloContract extends BaseContract {
 
     public static abstract class EstiloEntry implements BaseColumns{
-        public static final String TABLE_NAME = "Estilo";
+        public static final String TABLE_NAME = "Style";
         public static final String COLUMN_NAME = "Nome";
         public static final String COLUMN_DESCRICAO = "Descricao";
         public static final String COLUMN_PRECO = "Preco";

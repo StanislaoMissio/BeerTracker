@@ -9,7 +9,7 @@ import android.os.Parcelable;
 
 import com.android.beertracker.table.EstiloContract;
 
-public class Estilo implements Parcelable{
+public class Style implements Parcelable{
 
     @SerializedName("cod_estilo")
     private long codEstilo;
@@ -27,7 +27,7 @@ public class Estilo implements Parcelable{
         this.image = image;
     }
 
-    public long getCodEstilo() {
+    public long getCodStyle() {
         return codEstilo;
     }
 
@@ -73,9 +73,9 @@ public class Estilo implements Parcelable{
         out.writeDouble(preco);
     }
 
-    public Estilo(){}
+    public Style(){}
 
-    public Estilo(Cursor cursor){
+    public Style(Cursor cursor){
         this.codEstilo = cursor.getLong(cursor.getColumnIndex(EstiloContract.EstiloEntry._ID));
         this.nomeEstilo = cursor.getString(cursor.getColumnIndex(EstiloContract.EstiloEntry.COLUMN_NAME));
         this.descricao = cursor.getString(cursor.getColumnIndex(EstiloContract.EstiloEntry.COLUMN_DESCRICAO));
@@ -83,7 +83,7 @@ public class Estilo implements Parcelable{
         this.image = cursor.getString(cursor.getColumnIndex(EstiloContract.EstiloEntry.COLUMN_IMAGE));
     }
 
-    public Estilo(Parcel in){
+    public Style(Parcel in){
         codEstilo = in.readLong();
         nomeEstilo = in.readString();
         descricao = in.readString();
@@ -91,16 +91,16 @@ public class Estilo implements Parcelable{
         preco = in.readDouble();
     }
 
-    public static final Parcelable.Creator<Estilo> CREATOR = new Parcelable.Creator<Estilo>(){
+    public static final Parcelable.Creator<Style> CREATOR = new Parcelable.Creator<Style>(){
 
         @Override
-        public Estilo createFromParcel(Parcel parcel) {
-            return new Estilo(parcel);
+        public Style createFromParcel(Parcel parcel) {
+            return new Style(parcel);
         }
 
         @Override
-        public Estilo[] newArray(int i) {
-            return new Estilo[i];
+        public Style[] newArray(int i) {
+            return new Style[i];
         }
     };
 }

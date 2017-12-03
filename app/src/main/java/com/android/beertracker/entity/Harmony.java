@@ -6,21 +6,21 @@ import com.google.gson.annotations.SerializedName;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Harmonia implements Parcelable{
+public class Harmony implements Parcelable{
 
     @SerializedName("cod_harmonia")
     private int codHarmonia;
     @SerializedName("nome_harmonia")
     private String nomeHarmonia;
     private String descricao;
-    private String tipo;
+    private String imagem;
 
-    public String getTipo() {
-        return tipo;
+    public String getImagem() {
+        return imagem;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
 
     public String getNomeHarmonia() {
@@ -57,25 +57,25 @@ public class Harmonia implements Parcelable{
         out.writeLong(codHarmonia);
         out.writeString(nomeHarmonia);
         out.writeString(descricao);
-        out.writeString(tipo);
+        out.writeString(imagem);
     }
 
-    public Harmonia(Parcel in){
+    public Harmony(Parcel in){
         codHarmonia = in.readInt();
         nomeHarmonia = in.readString();
         descricao = in.readString();
-        tipo = in.readString();
+        imagem = in.readString();
     }
 
-    public static final Creator<Harmonia> CREATOR = new Creator<Harmonia>() {
+    public static final Creator<Harmony> CREATOR = new Creator<Harmony>() {
         @Override
-        public Harmonia createFromParcel(Parcel in) {
-            return new Harmonia(in);
+        public Harmony createFromParcel(Parcel in) {
+            return new Harmony(in);
         }
 
         @Override
-        public Harmonia[] newArray(int size) {
-            return new Harmonia[size];
+        public Harmony[] newArray(int size) {
+            return new Harmony[size];
         }
     };
 }

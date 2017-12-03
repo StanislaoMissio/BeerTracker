@@ -11,17 +11,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.android.beertracker.R;
-import com.android.beertracker.entity.Estilo;
-import com.android.beertracker.fragment.EstiloDetailFragment;
-import com.android.beertracker.fragment.EstiloHarmonyFragment;
-import com.android.beertracker.fragment.EstiloPriceFragment;
+import com.android.beertracker.entity.Style;
+import com.android.beertracker.fragment.StyleDetailFragment;
+import com.android.beertracker.fragment.StyleHarmonyFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EstiloDetailPageActivity extends AppCompatActivity {
+public class StyleDetailPageActivity extends AppCompatActivity {
 
-    public static final String SELECTED_ESTILO = "selected_estilo";
+    public static final String SELECTED_STYLE = "selected_style";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,23 +30,21 @@ public class EstiloDetailPageActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Estilo estilo = loadEstilo();
-        if(estilo != null){
+        Style style = loadStyle();
+        if(style != null){
             final ViewPager viewPager = findViewById(R.id.pager_selected_style);
             setupViewPager(viewPager);
-            TabLayout tabLayout = findViewById(R.id.tab_menu_details_estilo);
+            TabLayout tabLayout = findViewById(R.id.tab_menu_details_style);
             tabLayout.setupWithViewPager(viewPager);
             tabLayout.getTabAt(0).setIcon(R.drawable.ic_description_white_36dp);
-            tabLayout.getTabAt(1).setIcon(R.drawable.ic_attach_money_white_36dp);
-            tabLayout.getTabAt(2).setIcon(R.drawable.ic_restaurant_white_36dp);
+            tabLayout.getTabAt(1).setIcon(R.drawable.ic_restaurant_white_36dp);
         }
     }
 
     private void setupViewPager(ViewPager viewPager){
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new EstiloDetailFragment());
-        adapter.addFragment(new EstiloPriceFragment());
-        adapter.addFragment(new EstiloHarmonyFragment());
+        adapter.addFragment(new StyleDetailFragment());
+        adapter.addFragment(new StyleHarmonyFragment());
         viewPager.setAdapter(adapter);
     }
 
@@ -58,10 +55,10 @@ public class EstiloDetailPageActivity extends AppCompatActivity {
     }
 
     @Nullable
-    private Estilo loadEstilo(){
+    private Style loadStyle(){
         if(getIntent().getExtras()!= null
-                && getIntent().getExtras().containsKey(SELECTED_ESTILO)){
-            return getIntent().getExtras().getParcelable(SELECTED_ESTILO);
+                && getIntent().getExtras().containsKey(SELECTED_STYLE)){
+            return getIntent().getExtras().getParcelable(SELECTED_STYLE);
         }
         return null;
     }

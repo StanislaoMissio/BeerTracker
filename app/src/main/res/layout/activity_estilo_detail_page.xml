@@ -18,7 +18,7 @@
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
         <android.support.design.widget.TabLayout
-                android:id="@+id/tab_menu_details_estilo"
+                android:id="@+id/tab_menu_details_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/orange_F5A44D"

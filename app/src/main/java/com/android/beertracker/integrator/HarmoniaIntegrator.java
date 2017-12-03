@@ -2,9 +2,10 @@ package com.android.beertracker.integrator;
 
 import android.content.Context;
 
-import com.android.beertracker.activity.Response;
-import com.android.beertracker.entity.Harmonia;
-import com.android.beertracker.infrastructure.Contants;
+import com.android.beertracker.activity.HarmonyResponse;
+import com.android.beertracker.activity.StyleResponse;
+import com.android.beertracker.entity.Harmony;
+import com.android.beertracker.infrastructure.Constants;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,12 +18,12 @@ public class HarmoniaIntegrator extends BaseIntegrator{
         super(context);
     }
 
-    public List<Harmonia> loadAllHarmoniaForAnStyle(long codEstilo){
-        final HarmoniaAPI api = RetrofitClient.getClient(Contants.BeerTrackerAPI.HOST).create(HarmoniaAPI.class);
-        final Call<Response> request = api.getHarmonia(codEstilo);
+    public List<Harmony> loadAllHarmoniaForAnStyle(long codEstilo){
+        final HarmoniaAPI api = RetrofitClient.getClient(Constants.BeerTrackerAPI.HOST).create(HarmoniaAPI.class);
+        final Call<HarmonyResponse> request = api.getHarmonia(codEstilo);
         try{
-            final retrofit2.Response<Response> response = request.execute();
-            return response.body().getDataHarmonia();
+            final retrofit2.Response<HarmonyResponse> response = request.execute();
+            return response.body().getData();
         } catch (IOException e){
             e.printStackTrace();
         }

@@ -9,36 +9,36 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.beertracker.R;
-import com.android.beertracker.entity.Estilo;
+import com.android.beertracker.entity.Style;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class EstiloAdapter extends RecyclerView.Adapter<EstiloAdapter.EstiloViewHolder> {
+public class StyleAdapter extends RecyclerView.Adapter<StyleAdapter.StyleViewHolder> {
 
-    private List<Estilo> itemsList;
-    private onEstiloClickListener onEstiloClickListener;
+    private List<Style> itemsList;
+    private onStyleClickListener onStyleClickListener;
     private Context context;
 
-    public EstiloAdapter(List<Estilo> itemsList, onEstiloClickListener onEstiloClickListener) {
+    public StyleAdapter(List<Style> itemsList, onStyleClickListener onStyleClickListener) {
         this.itemsList = itemsList;
-        this.onEstiloClickListener = onEstiloClickListener;
+        this.onStyleClickListener = onStyleClickListener;
     }
 
     @Override
-    public EstiloViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public StyleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
         View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_card_beerstyle, null);
-        return new EstiloViewHolder(layout);
+        return new StyleViewHolder(layout);
     }
 
     @Override
-    public void onBindViewHolder(EstiloViewHolder holder, int position) {
-        Estilo estilo = itemsList.get(position);
-        holder.styleTitle.setText(estilo.getNomeEstilo());
+    public void onBindViewHolder(StyleViewHolder holder, int position) {
+        Style style = itemsList.get(position);
+        holder.styleTitle.setText(style.getNomeEstilo());
         Picasso
             .with(context)
-            .load(estilo.getImagem())
+            .load(style.getImagem())
             .resize(250, 250)
             .error(R.drawable.ic_error_outline_black_36dp)
             .placeholder(R.drawable.progress_animation)
@@ -50,18 +50,18 @@ public class EstiloAdapter extends RecyclerView.Adapter<EstiloAdapter.EstiloView
         return (itemsList == null) ? 0 : itemsList.size();
     }
 
-    class EstiloViewHolder extends RecyclerView.ViewHolder{
+    class StyleViewHolder extends RecyclerView.ViewHolder{
 
         ImageView styleImage;
         TextView styleTitle;
 
-        public EstiloViewHolder(View itemView) {
+        public StyleViewHolder(View itemView) {
             super(itemView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    onEstiloClickListener.onEstiloSelected(itemsList.get(getLayoutPosition()));
+                    onStyleClickListener.onStyleSelected(itemsList.get(getLayoutPosition()));
                 }
             });
             styleImage = itemView.findViewById(R.id.style_image);
@@ -69,8 +69,8 @@ public class EstiloAdapter extends RecyclerView.Adapter<EstiloAdapter.EstiloView
         }
     }
 
-    public interface onEstiloClickListener{
-        void onEstiloSelected(Estilo estilo);
+    public interface onStyleClickListener {
+        void onStyleSelected(Style style);
     }
 
 }

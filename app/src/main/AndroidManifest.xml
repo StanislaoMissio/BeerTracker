@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.android.beertracker">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -15,9 +16,9 @@
         android:theme="@style/AppTheme.NoActionBar"
         tools:targetApi="donut">
         <activity
-            android:name=".activity.MainActivity"
-            android:label="@string/app_name"
-            ></activity>
+                android:name=".activity.MainActivity"
+                android:label="@string/app_name"
+                ></activity>
         <activity
             android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" >
@@ -26,11 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.EstiloActivity" />
-        <activity
-            android:name=".activity.Estilos"
-            android:label="@string/title_activity_estilos"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.New_role"
             android:label="@string/title_activity_new_role"
@@ -40,7 +36,8 @@
             android:label="@string/title_activity_motorista"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-
+        <activity android:name=".activity.StyleActivity">
+        </activity>
         <activity
             android:name=".activity.Amigos"
             android:label="@string/title_activity_amigos"
@@ -49,7 +46,7 @@
         <activity android:name=".activity.CadastroActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".activity.EstiloDetailPageActivity">
+        <activity android:name=".activity.StyleDetailPageActivity">
         </activity>
     </application>
 
