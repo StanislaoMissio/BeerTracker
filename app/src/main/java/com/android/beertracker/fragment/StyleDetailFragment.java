@@ -11,15 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.beertracker.R;
-import com.android.beertracker.entity.Estilo;
+import com.android.beertracker.entity.Style;
 import com.squareup.picasso.Picasso;
 
-public class EstiloDetailFragment extends Fragment {
+public class StyleDetailFragment extends Fragment {
 
-    private static final String SELECTED_ESTILO =  "selected_estilo";
+    private static final String SELECTED_STYLE =  "selected_style";
     private Context context;
 
-    public EstiloDetailFragment(){}
+    public StyleDetailFragment(){}
 
     @Override
     public void onAttach(Context context) {
@@ -36,26 +36,26 @@ public class EstiloDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_details_page_style, container, false);
-        Estilo estilo = loadEstilo();
-        if(estilo != null){
-            ImageView imageEstilo = rootView.findViewById(R.id.image_style_details);
-            TextView titleEstilo = rootView.findViewById(R.id.title_style_details);
-            TextView descricaoEstilo = rootView.findViewById(R.id.description_style_details);
+        Style style = loadStyle();
+        if(style != null){
+            ImageView imageStyle = rootView.findViewById(R.id.image_style_details);
+            TextView titleStyle = rootView.findViewById(R.id.title_style_details);
+            TextView descriptionStyle = rootView.findViewById(R.id.description_style_details);
 
             Picasso
                 .with(context)
-                .load(estilo.getImagem())
-                .into(imageEstilo);
-            titleEstilo.setText(estilo.getNomeEstilo());
-            descricaoEstilo.setText(estilo.getDescricao());
+                .load(style.getImagem())
+                .into(imageStyle);
+            titleStyle.setText(style.getNomeEstilo());
+            descriptionStyle.setText(style.getDescricao());
         }
         return rootView;
     }
 
-    private Estilo loadEstilo(){
+    private Style loadStyle(){
         if(getActivity().getIntent().getExtras()
-                != null && getActivity().getIntent().getExtras().containsKey(SELECTED_ESTILO)){
-            return getActivity().getIntent().getExtras().getParcelable(SELECTED_ESTILO);
+                != null && getActivity().getIntent().getExtras().containsKey(SELECTED_STYLE)){
+            return getActivity().getIntent().getExtras().getParcelable(SELECTED_STYLE);
         }
         return null;
     }

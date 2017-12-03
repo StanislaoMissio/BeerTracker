@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.android.beertracker.R;
 
-public class Amigos extends AppCompatActivity {
+public class Friends extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

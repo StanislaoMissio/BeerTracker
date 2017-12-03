@@ -1,7 +1,7 @@
 package com.android.beertracker.integrator;
 
-import com.android.beertracker.activity.Response;
-import com.android.beertracker.entity.Estilo;
+import com.android.beertracker.activity.StyleResponse;
+import com.android.beertracker.entity.Style;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -11,11 +11,11 @@ import retrofit2.http.Query;
 public interface EstiloAPI {
 
     @GET("/estilo/:id")
-    Call<Response> getEstilo(@Query("id") int id);
+    Call<StyleResponse> getEstilo(@Query("id") int id);
 
     @GET("estilos/")
-    Call<Response> getAllEstilos();
+    Call<StyleResponse> getAllEstilos();
 
-    @POST("/inserir-estilo/")
-    void setEstilos(Estilo estilo);
+    @POST("/inserir-style/")
+    void setEstilos(Style style);
 }

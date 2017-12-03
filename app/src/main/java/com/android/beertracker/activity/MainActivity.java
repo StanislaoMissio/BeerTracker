@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity
         chooseStyle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent = new Intent(MainActivity.this, EstiloActivity.class);
+               Intent intent = new Intent(MainActivity.this, StyleActivity.class);
                startActivity(intent);
             }
         });
@@ -67,13 +67,13 @@ public class MainActivity extends AppCompatActivity
             Intent motorista = new Intent(getApplicationContext(), MotoristaActivity.class);
             startActivity(motorista);
         } else if (id == R.id.nav_estilos) {
-            Intent estilos = new Intent(getApplicationContext(), Estilos.class);
+            Intent estilos = new Intent(getApplicationContext(), Styles.class);
             startActivity(estilos);
         } else if (id == R.id.nav_new_role) {
             Intent role = new Intent(getApplicationContext(), New_role.class);
             startActivity(role);
         } else if (id == R.id.nav_amigos) {
-            Intent amigos = new Intent(getApplicationContext(), Amigos.class);
+            Intent amigos = new Intent(getApplicationContext(), Friends.class);
             startActivity(amigos);
         }
 

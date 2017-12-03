@@ -5,11 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 
-import com.android.beertracker.entity.Estilo;
-import com.android.beertracker.infrastructure.Contants;
+import com.android.beertracker.entity.Style;
+import com.android.beertracker.infrastructure.Constants;
 import com.android.beertracker.infrastructure.OperationError;
 import com.android.beertracker.infrastructure.OperationListener;
-import com.android.beertracker.manager.EstiloManager;
+import com.android.beertracker.manager.StyleManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,28 +24,28 @@ public class EstiloSyncer extends Syncer{
 
     @Override
     public void sync(Intent intent) {
-        final ResultReceiver receiver = intent.getParcelableExtra(Contants.Services.Tag.RESULT_RECIEVER);
-        int command = intent.getIntExtra(Contants.Services.Tag.COMMAND, 0);
+        final ResultReceiver receiver = intent.getParcelableExtra(Constants.Services.Tag.RESULT_RECIEVER);
+        int command = intent.getIntExtra(Constants.Services.Tag.COMMAND, 0);
 
-        EstiloManager estiloManager = new EstiloManager(this.service);
+        StyleManager styleManager = new StyleManager(this.service);
 
         switch (command) {
-            case Contants.Services.SyncCommand.RESULT_OK:
-                estiloManager.loadAllEstilos(new OperationListener<List<Estilo>>() {
+            case Constants.Services.SyncCommand.RESULT_OK:
+                styleManager.loadAllEstilos(new OperationListener<List<Style>>() {
                     @Override
-                    public void onOperationSuccess(List<Estilo> estilos) {
+                    public void onOperationSuccess(List<Style> styles) {
                         final Bundle bundleExtras = new Bundle();
-                        bundleExtras.putParcelableArrayList(Contants.Services.Tag.BULK_LIST,
-                                new ArrayList<>(estilos));
-                        receiver.send(Contants.Services.Status.FINISH, bundleExtras);
+                        bundleExtras.putParcelableArrayList(Constants.Services.Tag.BULK_LIST,
+                                new ArrayList<>(styles));
+                        receiver.send(Constants.Services.Status.FINISH, bundleExtras);
                     }
 
                     @Override
-                    public void onOperationError(List<Estilo> estilos, List<OperationError> errors) {
+                    public void onOperationError(List<Style> styles, List<OperationError> errors) {
                         final Bundle bundleExtras = new Bundle();
-                        bundleExtras.putString(Contants.Services.Tag.ERROR_MESSAGE,
+                        bundleExtras.putString(Constants.Services.Tag.ERROR_MESSAGE,
                                 "Serviço não disponivel. Tente mais tarde");
-                        receiver.send(Contants.Services.Status.ERROR, bundleExtras);
+                        receiver.send(Constants.Services.Status.ERROR, bundleExtras);
                     }
                 });
                 break;
