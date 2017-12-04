@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_marginStart="@dimen/default_size_50_dp"
+        android:layout_marginEnd="@dimen/default_size_50_dp">
+
+    <ImageView
+            android:id="@+id/profile_driver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin_40_dp"
+            android:background="@drawable/delete"
+            android:layout_centerHorizontal="true"/>
+
+    <TextView
+            android:id="@+id/name_driver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/default_size_20_sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/default_size_50_dp"
+            tools:text="Motorista"
+            android:layout_below="@+id/profile_driver"/>
+
+    <TextView
+            android:id="@+id/chosen_driver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chosen_driver"
+            android:textSize="@dimen/default_size_20_sp"
+            android:layout_marginTop="@dimen/default_margin_40_dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/name_driver"/>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin_40_dp"
+            android:layout_below="@+id/chosen_driver"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+        <Button
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@color/blue_1B9AF7"
+                android:textColor="@color/white"
+                android:text="@string/home"/>
+
+        <Button
+                android:id="@+id/random_again"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/default_margin_10_dp"
+                android:background="@color/blue_1B9AF7"
+                android:textColor="@color/white"
+                android:text="@string/choose_again"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

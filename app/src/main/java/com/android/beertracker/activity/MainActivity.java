@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 import com.android.beertracker.R;
+import com.android.beertracker.entity.Style;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -64,17 +65,11 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_inicio) {
         } else if (id == R.id.nav_motorista) {
-            Intent motorista = new Intent(getApplicationContext(), MotoristaActivity.class);
-            startActivity(motorista);
+            Intent driver = new Intent(getApplicationContext(), MotoristaActivity.class);
+            startActivity(driver);
         } else if (id == R.id.nav_estilos) {
-            Intent estilos = new Intent(getApplicationContext(), Styles.class);
-            startActivity(estilos);
-        } else if (id == R.id.nav_new_role) {
-            Intent role = new Intent(getApplicationContext(), New_role.class);
-            startActivity(role);
-        } else if (id == R.id.nav_amigos) {
-            Intent amigos = new Intent(getApplicationContext(), Friends.class);
-            startActivity(amigos);
+            Intent style = new Intent(getApplicationContext(), Style.class);
+            startActivity(style);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
