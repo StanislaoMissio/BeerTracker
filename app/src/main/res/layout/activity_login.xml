@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.android.beertracker.view.LoginActivity">
+    tools:context="com.android.beertracker.activity.LoginActivity"
+    android:layout_marginTop="?attr/actionBarSize">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/default_margin_15_dp"
+        android:layout_marginTop="@dimen/default_margin_40_dp"
         android:text="@string/app_name"
         android:textSize="@dimen/default_size_24_sp" />
 
@@ -20,7 +21,8 @@
         android:layout_height="@dimen/default_size_50_dp"
         android:layout_marginEnd="@dimen/default_margin_40_dp"
         android:layout_marginStart="@dimen/default_margin_40_dp"
-        android:layout_marginTop="@dimen/default_margin_40_dp"
+        android:layout_marginTop="60dp"
+        android:inputType="textEmailAddress"
         android:hint="@string/login" />
 
     <EditText
@@ -41,20 +43,14 @@
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="start"
             android:layout_marginStart="@dimen/default_margin_40_dp"
             android:layout_marginTop="@dimen/default_margin_50_dp"
-            android:text="@string/login" />
-
-        <Button
-            android:id="@+id/facebook_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/default_margin_40_dp"
-            android:layout_marginTop="@dimen/default_margin_50_dp"
-            android:layout_toEndOf="@+id/login"
-            android:text="@string/facebook_login" />
-
+            android:text="@string/login"
+            android:background="@drawable/theme_button_pattern"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <FrameLayout

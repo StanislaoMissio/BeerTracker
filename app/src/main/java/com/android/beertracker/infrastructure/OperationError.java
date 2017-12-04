@@ -3,7 +3,7 @@ package com.android.beertracker.infrastructure;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-class OperationError implements Parcelable{
+public class OperationError implements Parcelable{
 
     private String errorCode;
 

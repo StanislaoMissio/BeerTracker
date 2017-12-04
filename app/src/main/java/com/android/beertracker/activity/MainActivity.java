@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 import com.android.beertracker.R;
+import com.android.beertracker.entity.Style;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity
         chooseStyle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent = new Intent(MainActivity.this, EstiloActivity.class);
+               Intent intent = new Intent(MainActivity.this, StyleActivity.class);
                startActivity(intent);
             }
         });
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity
             Intent driver = new Intent(getApplicationContext(), MotoristaActivity.class);
             startActivity(driver);
         } else if (id == R.id.nav_estilos) {
-            Intent style = new Intent(getApplicationContext(), Estilos.class);
+            Intent style = new Intent(getApplicationContext(), Style.class);
             startActivity(style);
         }
 
