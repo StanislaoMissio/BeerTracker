@@ -1,6 +1,5 @@
 package com.android.beertracker.activity;
 
-import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -8,29 +7,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.beertracker.R;
 import com.android.beertracker.entity.User;
 import com.android.beertracker.infrastructure.OperationListener;
 import com.android.beertracker.manager.UserManager;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 public class CadastroActivity extends AppCompatActivity {
 
     private EditText nomeText;
     private EditText emailText;
-    private EditText senhaText;
-    private EditText dataNasc_cadastro;
-    private Calendar myCalendar;
-    private DatePickerDialog.OnDateSetListener date;
-    private Button btnCadastrar;
-    private Button btnCancelar;
+    private EditText passwordText;
+    Calendar myCalendar;
+    Button btnRegister;
+    Button btnCancelar;
     private UserManager userManager;
     private CheckBox checkAge;
 
@@ -44,36 +39,11 @@ public class CadastroActivity extends AppCompatActivity {
 
         nomeText = findViewById(R.id.nome_cadastro);
         emailText = findViewById(R.id.email_cadastro);
-        senhaText = findViewById(R.id.senha_cadastro);
-        dataNasc_cadastro = findViewById(R.id.dataNasc_cadastro);
+        passwordText = findViewById(R.id.senha_cadastro);
         myCalendar = Calendar.getInstance();
         btnCancelar = findViewById(R.id.btnCancelar);
-        btnCadastrar = findViewById(R.id.btnCadastrar);
+        btnRegister = findViewById(R.id.btnCadastrar);
         checkAge = findViewById(R.id.check_age);
-
-
-        dataNasc_cadastro.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                new DatePickerDialog(CadastroActivity.this, date, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-            }
-        });
-
-        date = new DatePickerDialog.OnDateSetListener() {
-
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                  int dayOfMonth) {
-                myCalendar.set(Calendar.YEAR, year);
-                myCalendar.set(Calendar.MONTH, monthOfYear);
-                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                updateLabel();
-            }
-
-        };
 
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -82,15 +52,17 @@ public class CadastroActivity extends AppCompatActivity {
             }
         });
 
-        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
                 if(checkAge.isChecked()) {
-                    User user = new User(nomeText.getText().toString(), senhaText.getText().toString(), emailText.getText().toString());
+                    User user = new User(nomeText.getText().toString(), passwordText.getText().toString(), emailText.getText().toString());
                     userManager.registerUser(user, new OperationListener() {
                         @Override
                         public void onOperationSuccess(Object o) {
-                            Snackbar.make(view, "Cadastro Executado com sucesso", Snackbar.LENGTH_SHORT).show();
+                            Toast.makeText(getBaseContext(), "Cadastro Executado com Sucesso", Toast.LENGTH_SHORT).show();
+                            onBackPressed();
+                            finish();
                         }
 
                         @Override
@@ -99,16 +71,9 @@ public class CadastroActivity extends AppCompatActivity {
                         }
                     });
                 } else {
-                    Snackbar.make(checkAge,)
+                    Snackbar.make(checkAge, "Você precisa confirmar que possui 18 anos ou mais", Snackbar.LENGTH_SHORT).show();
                 }
             }
         });
-    }
-
-    private void updateLabel() {
-        String myFormat = "MM/dd/yy";
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
-        dataNasc_cadastro.setText(sdf.format(myCalendar.getTime()));
     }
 }
