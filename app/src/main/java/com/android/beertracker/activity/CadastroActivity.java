@@ -3,18 +3,22 @@ package com.android.beertracker.activity;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
 import com.android.beertracker.R;
 import com.android.beertracker.entity.User;
+import com.android.beertracker.infrastructure.OperationListener;
 import com.android.beertracker.manager.UserManager;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 public class CadastroActivity extends AppCompatActivity {
@@ -28,6 +32,7 @@ public class CadastroActivity extends AppCompatActivity {
     private Button btnCadastrar;
     private Button btnCancelar;
     private UserManager userManager;
+    private CheckBox checkAge;
 
     @Override
 
@@ -44,6 +49,7 @@ public class CadastroActivity extends AppCompatActivity {
         myCalendar = Calendar.getInstance();
         btnCancelar = findViewById(R.id.btnCancelar);
         btnCadastrar = findViewById(R.id.btnCadastrar);
+        checkAge = findViewById(R.id.check_age);
 
 
         dataNasc_cadastro.setOnClickListener(new View.OnClickListener() {
@@ -78,16 +84,29 @@ public class CadastroActivity extends AppCompatActivity {
 
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                User user = new User(nomeText.getText().toString(), senhaText.getText().toString(), emailText.getText().toString());
-                user.addToJson();
-                userManager.registerUser();
+            public void onClick(final View view) {
+                if(checkAge.isChecked()) {
+                    User user = new User(nomeText.getText().toString(), senhaText.getText().toString(), emailText.getText().toString());
+                    userManager.registerUser(user, new OperationListener() {
+                        @Override
+                        public void onOperationSuccess(Object o) {
+                            Snackbar.make(view, "Cadastro Executado com sucesso", Snackbar.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onOperationError(Object o, List list) {
+                            Snackbar.make(view, "Erro ao executar cadastro", Snackbar.LENGTH_SHORT).show();
+                        }
+                    });
+                } else {
+                    Snackbar.make(checkAge,)
+                }
             }
         });
     }
 
     private void updateLabel() {
-        String myFormat = "MM/dd/yy"; //In which you need put here
+        String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         dataNasc_cadastro.setText(sdf.format(myCalendar.getTime()));

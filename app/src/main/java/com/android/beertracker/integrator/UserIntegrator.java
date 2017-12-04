@@ -1,5 +1,8 @@
 package com.android.beertracker.integrator;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import android.content.Context;
 
 import com.android.beertracker.activity.UserResponse;
@@ -9,6 +12,7 @@ import com.android.beertracker.infrastructure.Constants;
 import java.io.IOException;
 import java.util.HashMap;
 
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -22,7 +26,7 @@ public class UserIntegrator extends BaseIntegrator {
         super(context);
     }
 
-    public String registerUser(HashMap<String, String> user) {
+    public String registerUser(User user) {
         final UserAPI api = RetrofitClient.getClient(Constants.BeerTrackerAPI.HOST).create(UserAPI.class);
         final Call<UserResponse> request = api.registerUsuario(user);
         try {

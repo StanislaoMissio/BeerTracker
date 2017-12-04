@@ -3,6 +3,7 @@ package com.android.beertracker.entity;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.sql.Date;
@@ -10,8 +11,11 @@ import java.util.HashMap;
 
 public class User implements Parcelable {
 
+    @Expose
     private String usuario;
+    @Expose
     private String senha;
+    @Expose
     private String email;
 
     private HashMap<String, String> listUser = new HashMap<>();

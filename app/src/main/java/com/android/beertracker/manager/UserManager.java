@@ -61,7 +61,7 @@ public class UserManager extends BaseManager {
         task.execute();
     }
 
-    public void registerUser(final HashMap<String, String> user, final OperationListener operationListener) {
+    public void registerUser(final User user, final OperationListener operationListener) {
         final AsyncTask<Void, Void, OperationResult<String>> task =
                 new AsyncTask<Void, Void, OperationResult<String>>() {
                     @Override
