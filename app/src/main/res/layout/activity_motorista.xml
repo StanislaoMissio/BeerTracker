@@ -1,81 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.android.beertracker.activity.MotoristaActivity">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.android.beertracker.activity.MotoristaActivity">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/AppBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:id="@+id/AppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbarDriver"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/orange_F5A44D"
-            app:titleTextColor="@color/white">
+                android:id="@+id/toolbarDriver"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/orange_F5A44D"
+                app:titleTextColor="@color/white">
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
     <TextView
-        android:id="@+id/txtSorteioRole"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/default_size_50_dp"
-        android:textSize="20dp"
-        android:layout_below="@+id/AppBar"
-        android:layout_marginEnd="@dimen/default_margin_40_dp"
-        android:layout_marginStart="@dimen/default_margin_40_dp"
-        android:layout_marginTop="30dp"
-        android:hint="@string/nomeRole" />
+            android:id="@+id/txtSorteioRole"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_size_50_dp"
+            android:textSize="@dimen/default_size_20_sp"
+            android:layout_below="@+id/AppBar"
+            android:layout_marginEnd="@dimen/default_margin_40_dp"
+            android:layout_marginStart="@dimen/default_margin_40_dp"
+            android:layout_marginTop="30dp"
+            android:hint="@string/nomeRole"/>
 
     <EditText
-        android:id="@+id/txtInput"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtSorteioRole"
-        android:hint="Novo Nome"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="40dp"/>
+            android:id="@+id/txtInput"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtSorteioRole"
+            android:hint="Novo Nome"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"/>
 
     <Button
-        android:id="@+id/btAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/txtSorteioRole"
-        android:layout_alignTop="@+id/txtInput"
-        android:text="Add"
-        style="@style/BotaoPadrao"/>
-
-    <android.support.design.widget.CoordinatorLayout
-        android:id="@id/list"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="@dimen/default_margin_40_dp"
-        android:layout_below="@+id/txtInput">
+            android:id="@+id/btAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/txtSorteioRole"
+            android:layout_alignTop="@+id/txtInput"
+            android:text="Add"
+            style="@style/BotaoPadrao"/>
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </android.support.v7.widget.RecyclerView>
-
-    </android.support.design.widget.CoordinatorLayout>
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="@dimen/default_margin_40_dp"
+            android:layout_marginEnd="@dimen/default_margin_40_dp"
+            android:layout_below="@+id/txtInput"/>
 
     <Button
-        android:id="@+id/btnSortear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/list"
-        android:layout_marginTop="@dimen/default_margin_40_dp"
-        android:layout_centerHorizontal="true"
-        android:text="Sortear"
-        style="@style/BotaoPadrao"/>
+            android:id="@+id/btnSortear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list"
+            android:layout_marginTop="@dimen/default_margin_40_dp"
+            android:layout_centerHorizontal="true"
+            android:text="Sortear"
+            style="@style/BotaoPadrao"/>
 
 </RelativeLayout>
 

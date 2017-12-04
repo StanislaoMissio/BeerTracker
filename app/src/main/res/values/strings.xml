@@ -32,4 +32,7 @@
     <string name="title_activity_estilos">Estilos</string>
     <string name="title_activity_new_role">New_role</string>
     <string name="title_activity_amigos">Amigos</string>
+    <string name="chosen_driver">Você é o motorista da rodada</string>
+    <string name="choose_again">Sortear Novamente</string>
+    <string name="home">Inicio</string>
 </resources>
