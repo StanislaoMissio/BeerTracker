@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.android.beertracker.R;
 
-public class ChosenDriver extends AppCompatActivity {
+public class ChosenDriverActivity extends AppCompatActivity {
 
     ImageView imageDriver;
     TextView nameDriver;
@@ -47,7 +47,7 @@ public class ChosenDriver extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ChosenDriver.this, MainActivity.class);
+                Intent intent = new Intent(ChosenDriverActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();

@@ -34,10 +34,13 @@
         <activity android:name=".activity.MotoristaActivity">
         </activity>
 
-        <activity android:name=".activity.ChosenDriver">
+        <activity android:name=".activity.ChosenDriverActivity">
         </activity>
 
         <activity android:name=".activity.StyleDetailPageActivity">
+        </activity>
+
+        <activity android:name=".activity.StyleActivity">
         </activity>
 
     </application>

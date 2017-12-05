@@ -45,8 +45,7 @@ public class StyleHarmonyFragment extends Fragment {
         recyclerView = rootView.findViewById(R.id.recycler_harmony);
         harmonyManager = new HarmonyManager(context);
         recyclerView.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
-        Style style = loadStyle();
-        loadHarmony(style.getCodStyle());
+        loadHarmony(loadStyle());
         return rootView;
     }
 
@@ -58,13 +57,13 @@ public class StyleHarmonyFragment extends Fragment {
         return null;
     }
 
-    private void loadHarmony(long codStyle){
+    private void loadHarmony(Style style){
         harmonyManager.loadAllHarmoniaForAnStyle(new OperationListener<List<Harmony>>() {
             @Override
             public void onOperationSuccess(List<Harmony> harmonies) {
                 harmonyAdapter = new HarmonyAdapter(harmonies);
                 recyclerView.setAdapter(harmonyAdapter);
             }
-        }, codStyle);
+        }, style);
     }
 }
