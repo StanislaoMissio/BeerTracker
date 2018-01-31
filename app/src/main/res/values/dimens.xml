@@ -12,6 +12,7 @@
     <dimen name="default_margin_32_dp">32dp</dimen>
     <dimen name="default_margin_50_dp">50dp</dimen>
     <dimen name="default_margin_80_dp">80dp</dimen>
+    <dimen name="default_margin_100_dp">100dp</dimen>
     <dimen name="default_size_18_sp">18sp</dimen>
     <dimen name="default_size_20_sp">20sp</dimen>
     <dimen name="default_margin_24_dp">24dp</dimen>
