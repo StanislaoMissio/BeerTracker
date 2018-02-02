@@ -14,18 +14,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme.NoActionBar">
 
-        <activity android:name=".activity.MainActivity"
-                  android:label="@string/app_name">
+        <activity android:name=".activity.MainActivity">
         </activity>
 
         <activity android:name=".activity.LoginActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-
         </activity>
 
         <activity android:name=".activity.CadastroActivity">
@@ -41,6 +33,16 @@
         </activity>
 
         <activity android:name=".activity.StyleActivity">
+        </activity>
+
+        <activity android:name=".activity.SplashScreenActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
         </activity>
 
     </application>
