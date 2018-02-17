@@ -1,6 +1,7 @@
 package com.android.beertracker.business;
 
 import com.android.beertracker.entity.Harmony;
+import com.android.beertracker.entity.Style;
 import com.android.beertracker.infrastructure.OperationResult;
 import com.android.beertracker.integrator.HarmoniaIntegrator;
 
@@ -18,9 +19,9 @@ public class HarmoniaBusiness {
         this.harmoniaIntegrator = harmoniaIntegrator;
     }
 
-    public OperationResult<List<Harmony>> loadAllHamoniaForAnStyle(long codEstilo){
+    public OperationResult<List<Harmony>> loadAllHamoniaForAnStyle(Style style){
         OperationResult<List<Harmony>> result = new OperationResult<>();
-        result.setResult(harmoniaIntegrator.loadAllHarmoniaForAnStyle(codEstilo));
+        result.setResult(harmoniaIntegrator.loadAllHarmoniaForAnStyle(style));
         result.setOperationCompletedSuccessfully(true);
         return result;
     }

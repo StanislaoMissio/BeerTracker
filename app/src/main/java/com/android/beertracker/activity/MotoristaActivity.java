@@ -14,7 +14,6 @@ import android.widget.EditText;
 import com.android.beertracker.R;
 import com.android.beertracker.adapter.DriverAdapter;
 
-import java.util.List;
 import java.util.Random;
 
 public class MotoristaActivity extends AppCompatActivity {
@@ -60,7 +59,7 @@ public class MotoristaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(adapter.getItemCount() > 0) {
-                    Intent intent = new Intent(MotoristaActivity.this, ChosenDriver.class);
+                    Intent intent = new Intent(MotoristaActivity.this, ChosenDriverActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putString(NAME_DRIVER, adapter.getDriverAtPosition(randomDriver()));
                     intent.putExtras(bundle);

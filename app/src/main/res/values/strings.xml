@@ -39,4 +39,5 @@
     <string name="choose_again">Sortear Novamente</string>
     <string name="home">Inicio</string>
     <string name="check_age">Você confirma que possui ao menos 18 anos?</string>
+    <string name="loading">Carregando</string>
 </resources>

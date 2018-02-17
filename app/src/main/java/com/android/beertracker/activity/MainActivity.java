@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity
             Intent driver = new Intent(getApplicationContext(), MotoristaActivity.class);
             startActivity(driver);
         } else if (id == R.id.nav_estilos) {
-            Intent style = new Intent(getApplicationContext(), Style.class);
+            Intent style = new Intent(getApplicationContext(), StyleActivity.class);
             startActivity(style);
         }
 

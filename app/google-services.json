@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "952682494017",
+    "firebase_url": "https://beertracker-d895d.firebaseio.com",
+    "project_id": "beertracker-d895d",
+    "storage_bucket": "beertracker-d895d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:952682494017:android:dd47d08ef23dc095",
+        "android_client_info": {
+          "package_name": "com.android.beertracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "952682494017-rindic1856sermh68cs8ereb9erhicl4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_3dyMFvEI7aAdvKz733DMdXHiMWVtMNI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

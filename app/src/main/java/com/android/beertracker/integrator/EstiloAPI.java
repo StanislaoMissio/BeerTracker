@@ -10,12 +10,6 @@ import retrofit2.http.Query;
 
 public interface EstiloAPI {
 
-    @GET("/estilo/:id")
-    Call<StyleResponse> getEstilo(@Query("id") int id);
-
     @GET("estilos/")
     Call<StyleResponse> getAllEstilos();
-
-    @POST("/inserir-style/")
-    void setEstilos(Style style);
 }

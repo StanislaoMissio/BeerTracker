@@ -8,24 +8,16 @@
 
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/beertracker"
+            android:icon="@mipmap/ic_beer_tracker"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
+            android:roundIcon="@mipmap/ic_beer_tracker_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme.NoActionBar">
 
-        <activity android:name=".activity.MainActivity"
-                  android:label="@string/app_name">
+        <activity android:name=".activity.MainActivity">
         </activity>
 
         <activity android:name=".activity.LoginActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-
         </activity>
 
         <activity android:name=".activity.CadastroActivity">
@@ -34,10 +26,23 @@
         <activity android:name=".activity.MotoristaActivity">
         </activity>
 
-        <activity android:name=".activity.ChosenDriver">
+        <activity android:name=".activity.ChosenDriverActivity">
         </activity>
 
         <activity android:name=".activity.StyleDetailPageActivity">
+        </activity>
+
+        <activity android:name=".activity.StyleActivity">
+        </activity>
+
+        <activity android:name=".activity.SplashScreenActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
         </activity>
 
     </application>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.ResultReceiver;
 
 import com.android.beertracker.entity.Harmony;
+import com.android.beertracker.entity.Style;
 import com.android.beertracker.infrastructure.Constants;
 import com.android.beertracker.infrastructure.OperationError;
 import com.android.beertracker.infrastructure.OperationListener;
@@ -17,11 +18,11 @@ import java.util.List;
 public class HarmoniaSyncer extends Syncer{
 
     private Service service;
-    private long codEstilo;
+    private Style style;
 
-    public HarmoniaSyncer(Service service, long codEstilo){
+    public HarmoniaSyncer(Service service, Style style){
         this.service = service;
-        this.codEstilo = codEstilo;
+        this.style = style;
     }
 
     @Override
@@ -49,7 +50,7 @@ public class HarmoniaSyncer extends Syncer{
                                 "Serviço não disponivel. Tente mais tarde");
                         receiver.send(Constants.Services.Status.ERROR, bundleExtras);
                     }
-                }, codEstilo);
+                }, style);
                 break;
         }
     }
