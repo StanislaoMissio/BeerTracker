@@ -40,4 +40,7 @@
     <string name="home">Inicio</string>
     <string name="check_age">Você confirma que possui ao menos 18 anos?</string>
     <string name="loading">Carregando</string>
+
+    <!-- Facebook -->
+    <string name="facebook_app_id">306179239879479</string>
 </resources>

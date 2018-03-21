@@ -17,6 +17,13 @@ allprojects {
     repositories {
         jcenter()
         google()
+        mavenCentral()
+    }
+
+    ext {
+        supportLibVersion = '26.1.0'
+        firebaseLibVersion = '11.8.0'
+        facebookLibVersion = '4.27.0'
     }
 }
 
