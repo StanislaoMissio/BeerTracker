@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.beertracker.android.androidApp-mergeDebugResources-2:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/private/var/root/.gradle/caches/transforms-3/1a8e0043f4778ece873d1c3fe1c43307/transformed/core-1.12.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        }
+    ]
+}

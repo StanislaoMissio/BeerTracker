@@ -1,9 +1,45 @@
+## Gradle
+.gradle/
+*/build/
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+## IDE
 *.iml
-.gradle
+.idea/
+*.ipr
+*.iws
+
+## Android
 /local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
 /captures
 .externalNativeBuild
+*.apk
+*.aab
+*.ap_
+*.dex
+
+## Kotlin
+.kotlin/
+*.klib
+
+## iOS / Xcode
+xcuserdata/
+DerivedData/
+*.xcworkspace
+Pods/
+*.app
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## macOS
+.DS_Store
+
+## Environment
+.env
+.env.local
+
+## Misc
+*.log
+*.tmp
